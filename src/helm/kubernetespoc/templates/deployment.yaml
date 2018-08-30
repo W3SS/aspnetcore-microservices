@@ -1,0 +1,72 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "kubernetespoc.fullname" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ template "kubernetespoc.name" . }}
+    chart: {{ template "kubernetespoc.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "kubernetespoc.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "kubernetespoc.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /hc
+              port: 80
+          readinessProbe:
+            httpGet:
+              path: /hc
+              port: 80
+        {{- if .Values.volumeMounts }}
+          volumeMounts:
+          {{- if .Values.volumeMounts.configMaps -}}
+            {{- range $key, $val := .Values.volumeMounts.configMaps }}
+            - name: {{ $key }}
+              mountPath: {{ $val.mountPath }}
+              readOnly: true
+            {{- end }}
+          {{- end }}  
+          {{- if .Values.volumeMounts.secrets -}}
+            {{- range $key, $val := .Values.volumeMounts.secrets }}
+            - name: {{ $key }}
+              mountPath: {{ $val.mountPath }}
+              readOnly: true
+            {{- end }}
+          {{- end }}  
+        {{- end }}      
+        {{- if .Values.volumes }}
+          volumes:
+          {{- if .Values.volumes.configMaps -}}
+            {{- range $key, $val := .Values.volumes.configMaps }}
+            - name: {{ $key }}
+              configMap: 
+                name: {{ $key }}
+            {{- end }}
+          {{- end }}  
+          {{- if .Values.volumeMounts.secrets -}}
+            {{- range $key, $val := .Values.volumeMounts.secrets }}
+            - name: {{ $key }}
+              secret:
+                name: {{ $key }}
+            {{- end }}
+          {{- end }}  
+        {{- end }}

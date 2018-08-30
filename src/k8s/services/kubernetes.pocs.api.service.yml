@@ -5,7 +5,7 @@ metadata:
   namespace: samplepocs
 spec:
   selector:
-    app: kubernetespocs
+    app: kubernetespocs-api
     component: api
   ports:
   - port: 80

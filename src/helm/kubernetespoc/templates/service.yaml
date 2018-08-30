@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "kubernetespoc.fullname" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ template "kubernetespoc.name" . }}
+    chart: {{ template "kubernetespoc.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+  selector:
+    app: {{ template "kubernetespoc.name" . }}
+    release: {{ .Release.Name }}

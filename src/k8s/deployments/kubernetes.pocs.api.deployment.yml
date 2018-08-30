@@ -7,22 +7,22 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kubernetespocs
+      app: kubernetespocs-api
       component: api
   template:
     metadata:
       labels:
-        app: kubernetespocs
+        app: kubernetespocs-api
         component: api
-        owner: prajeeshprathap
-        scenario: pocs
     spec:
       containers:
       - name: kubernetespocs-api
         image: $DockerRegistry/kubernetespocs-api:$Version
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+          - name : http
+            containerPort: 80
+            protocol: TCP
         volumeMounts:
           - name: kubernetespoc-api-config
             mountPath: /app/configs

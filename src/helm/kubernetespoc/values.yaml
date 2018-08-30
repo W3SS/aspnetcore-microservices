@@ -1,0 +1,67 @@
+# Default values for kubernetespoc.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace: samplepocs
+name: kubernetespocs-api
+
+image:
+  repository: localhost:5000/kubernetespocs-api
+  tag: 1.0.0
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+replicaCount: 1
+containerPort: 80
+
+livenessProbe:
+  initialDelaySeconds: 10
+  timeoutSeconds: 10
+  periodSeconds: 10
+
+readinessProbe:
+  initialDelaySeconds: 10
+  timeoutSeconds: 10
+  periodSeconds: 10
+
+volumeMounts:
+  configMaps:
+    kubernetespoc-api-config: 
+      mountPath: /app/configs
+  secrets:
+    kubernetespoc-api-secret:
+      mountPath: /app/secrets
+
+volumes:
+  configMaps:
+    kubernetespoc-api-config: 
+      name: kubernetespoc-api-config
+  secrets:
+    kubernetespoc-api-secret:
+      name: kubernetespoc-api-secret
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "120s"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600s"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600s"
+  path: /kubernetespoc
+  hosts:
+    - localhost
+  tls: []
+
+configMaps:
+  appSettings:
+    connectionStrings:
+      hangfireDb: Server=postgres_ACC;Database=Hangfire;Username=CPP_ACCEPTANCE;Password=VERYSECUREDPASSWORD
+      elasticSearch: http://elasticsearch-acceptance:9200
+
+secrets:
+  keycloakUri: aHR0cHM6Ly90ZWFtNC0xLXZhbmRlcmxhbmRlLndlc3RldXJvcGUuY2xvdWRhcHAuYXp1cmUuY29tL2F1dGgvcmVhbG1zL0NvbnNpZ25tZW50UGxhbm5lckFQSQ==
+  clientId: Q1BQLWFjY2VwdGFuY2U=
+  clientSecret: MTFlMmIxZDMtOWYxMy00ZGY0LTk1ODgtZWEzMzNkNmYzMjcz
