@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: kubernetespocs-api
+  namespace: samplepocs
+spec:
+  selector:
+    app: kubernetespocs
+    component: api
+  ports:
+  - port: 80

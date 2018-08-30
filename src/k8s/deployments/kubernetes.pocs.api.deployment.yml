@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetespocs-api
+  namespace: samplepocs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubernetespocs
+      component: api
+  template:
+    metadata:
+      labels:
+        app: kubernetespocs
+        component: api
+        owner: prajeeshprathap
+        scenario: pocs
+    spec:
+      containers:
+      - name: kubernetespocs-api
+        image: $DockerRegistry/kubernetespocs-api:$Version
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - name: kubernetespoc-api-config
+            mountPath: /app/configs
+            readOnly: true
+          - name: kubernetespoc-api-secret
+            mountPath: /app/secrets
+            readOnly: true
+        livenessProbe:
+          httpGet:
+            path: /hc
+            port: 80
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /hc
+            port: 80
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+          periodSeconds: 10
+      volumes:
+        - name: kubernetespoc-api-config
+          configMap:
+            name: kubernetespoc-api-config
+        - name: kubernetespoc-api-secret
+          secret:
+            secretName: kubernetespoc-api-secret

@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  kubernetes.pocs.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "30001:80"
+    container_name: pocs_kubernetesapi

@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kubernetes.POCS.Api", "Kubernetes.POCS.Api\Kubernetes.POCS.Api.csproj", "{75DD8F3A-79C0-4380-8653-E701F22AD91F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A8B2D5E6-7466-42CD-99D8-39724D7208F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{D0496846-0A48-41D2-A085-4803B3FE558C}"
+	ProjectSection(SolutionItems) = preProject
+		k8s\kubernetes.pocs.api.deployment.yml = k8s\kubernetes.pocs.api.deployment.yml
+		k8s\kubernetes.pocs.api.service.yml = k8s\kubernetes.pocs.api.service.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helm", "helm", "{20A3C954-2650-4047-B153-2A23FCAEE6B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75DD8F3A-79C0-4380-8653-E701F22AD91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75DD8F3A-79C0-4380-8653-E701F22AD91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75DD8F3A-79C0-4380-8653-E701F22AD91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75DD8F3A-79C0-4380-8653-E701F22AD91F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B2D5E6-7466-42CD-99D8-39724D7208F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B2D5E6-7466-42CD-99D8-39724D7208F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B2D5E6-7466-42CD-99D8-39724D7208F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B2D5E6-7466-42CD-99D8-39724D7208F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6CC7599-3AB3-4F44-8E04-4B56E1C190FE}
+	EndGlobalSection
+EndGlobal

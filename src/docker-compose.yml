@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  kubernetes.pocs.api:
+    image: ${DOCKER_REGISTRY}kubernetespocsapi
+    build:
+      context: .
+      dockerfile: Kubernetes.POCS.Api/Dockerfile

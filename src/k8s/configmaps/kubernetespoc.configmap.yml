@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubernetespoc-api-config
+  namespace: samplepocs
+data:
+  appSettings: |
+    connectionStrings:
+      hangfireDb: Server=postgres_ACC;Database=Hangfire;Username=CPP_ACCEPTANCE;Password=VERYSECUREDPASSWORD
+      elasticsearch: http://elasticsearch-acceptance:9200

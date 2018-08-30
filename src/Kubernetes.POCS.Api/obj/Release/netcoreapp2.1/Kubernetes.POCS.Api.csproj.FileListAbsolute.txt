@@ -1,0 +1,14 @@
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\bin\Release\netcoreapp2.1\Kubernetes.POCS.Api.deps.json
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\bin\Release\netcoreapp2.1\Kubernetes.POCS.Api.runtimeconfig.json
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\bin\Release\netcoreapp2.1\Kubernetes.POCS.Api.runtimeconfig.dev.json
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\bin\Release\netcoreapp2.1\Kubernetes.POCS.Api.dll
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\bin\Release\netcoreapp2.1\Kubernetes.POCS.Api.pdb
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\obj\Release\netcoreapp2.1\Kubernetes.POCS.Api.csprojAssemblyReference.cache
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\obj\Release\netcoreapp2.1\Kubernetes.POCS.Api.csproj.CoreCompileInputs.cache
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\obj\Release\netcoreapp2.1\Kubernetes.POCS.Api.RazorAssemblyInfo.cache
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\obj\Release\netcoreapp2.1\Kubernetes.POCS.Api.RazorAssemblyInfo.cs
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\obj\Release\netcoreapp2.1\Kubernetes.POCS.Api.AssemblyInfoInputs.cache
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\obj\Release\netcoreapp2.1\Kubernetes.POCS.Api.AssemblyInfo.cs
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\obj\Release\netcoreapp2.1\Kubernetes.POCS.Api.RazorTargetAssemblyInfo.cache
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\obj\Release\netcoreapp2.1\Kubernetes.POCS.Api.dll
+C:\Prajeesh\VSProjects\SampleProjs\Kubernetes.POCS\src\Kubernetes.POCS.Api\obj\Release\netcoreapp2.1\Kubernetes.POCS.Api.pdb
